@@ -650,7 +650,7 @@ public class DOPrintMainActivity extends Activity implements Runnable {
                 try {
 
 //                    anImage = BitmapFactory.decodeStream(getAssets().open("images/android-logo-mask.png"));
-                    anImage = BitmapFactory.decodeFile("/mnt/sdcard/lixo2.jpg");
+                    anImage = BitmapFactory.decodeFile("/mnt/sdcard/lixo3.jpg");
                     ((ImageView) findViewById(R.id.ivLixo)).setImageBitmap(anImage);
 
                 } catch (Exception e) {
