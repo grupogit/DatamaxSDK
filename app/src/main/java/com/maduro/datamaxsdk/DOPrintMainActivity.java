@@ -11,11 +11,10 @@ import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.provider.DocumentsProvider;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -649,8 +648,11 @@ public class DOPrintMainActivity extends Activity implements Runnable {
                 Bitmap anImage = null;
                 try {
 
-//                    anImage = BitmapFactory.decodeStream(getAssets().open("images/android-logo-mask.png"));
-                    anImage = BitmapFactory.decodeFile("/mnt/sdcard/lixo3.jpg");
+                    String lixoPath = Environment.getExternalStorageDirectory()
+                            .getPath() + File.separator + "lixo3.jpg";
+
+                    Log.i("maduro", "lixoPath "+lixoPath+" | "+new File(lixoPath).exists());
+                    anImage = BitmapFactory.decodeFile(lixoPath);
                     ((ImageView) findViewById(R.id.ivLixo)).setImageBitmap(anImage);
 
                 } catch (Exception e) {
